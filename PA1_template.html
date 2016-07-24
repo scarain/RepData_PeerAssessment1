@@ -125,7 +125,9 @@ $(document).ready(function () {
 
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
-<pre class="r"><code>unzip(&quot;./activity.zip&quot;)
+<pre class="r"><code>fileUrl &lt;- &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;
+download.file(fileUrl, &quot;activity.zip&quot;)
+unzip(&quot;./activity.zip&quot;)
 activity &lt;- read.csv(&quot;activity.csv&quot;)
 activity$date &lt;- as.Date(activity$date, &quot;%Y-%m-%d&quot;)
 str(activity)</code></pre>

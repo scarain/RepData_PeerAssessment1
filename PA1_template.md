@@ -11,6 +11,8 @@ output: html_document
 
 
 ```r
+fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+download.file(fileUrl, "activity.zip")
 unzip("./activity.zip")
 activity <- read.csv("activity.csv")
 activity$date <- as.Date(activity$date, "%Y-%m-%d")
